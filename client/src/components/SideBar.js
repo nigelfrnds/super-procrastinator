@@ -4,15 +4,19 @@ const SideBar = (props) => {
   return (
     <div style={styles.containerStyle}>
       <ul className="nav nav-pills flex-column">
-        <h5>Pick your poison</h5>
+        <h6>Pick your poison</h6>
         <li className="nav-item">
-          <a className="nav-link active" data-toggle="pill" href="#home">reditt</a>
+          <a className="nav-link active" data-toggle="pill" onClick={() => props.fetchPosts('all',() => {})} href="#">All</a>
+          <hr />
         </li>
         <li className="nav-item">
-          <a className="nav-link" data-toggle="pill" href="#menu1">{`9GAG`}</a>
+          <a className="nav-link" data-toggle="pill" onClick={() => props.fetchPosts('reddit',() => {})} href="#">reddit</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" data-toggle="pill" href="#menu2">{`4chan`}</a>
+          <a className="nav-link" data-toggle="pill" onClick={() => props.fetchPosts('9GAG',() => {})} href="#menu1">{`9GAG`}</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" data-toggle="pill" onClick={() => props.fetchPosts('4chan',() => {})} href="#menu2">{`4chan`}</a>
         </li>
       </ul>
     </div>
